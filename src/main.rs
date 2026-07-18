@@ -1,7 +1,9 @@
+
+
+
 fn main() {
     println!(
-r#"FAD - Fast Audio Director
-
+r#"
 Usage:
     fad <command> [options]
 
@@ -18,7 +20,6 @@ Common Commands:
 For more information on a command:
     fad help <command>
 
-Project:
-    https://github.com/divya-darshan/fad
+bug report: https://github.com/divya-darshan/fad
 "#);
 }
