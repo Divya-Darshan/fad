@@ -1,9 +1,14 @@
 mod commands;
+
 use std::env;
 
 fn main() {
+    // Collect all command line arguments
+    let args: Vec<String> = env::args().collect();
 
-    println!(
+    // If no command is given, print help
+    if args.len() < 2 {
+        println!(
 r#"
 Usage:
     fad <command> [options]
@@ -20,12 +25,30 @@ Common Commands:
 
 For more information on a command:
     fad help <command>
-"#);
+"#
+        );
 
-// bug report: https://github.com/divya-darshan/fad
+        // bug report: https://github.com/divya-darshan/fad
+        return;
+    }
 
-if command == "play"{
-commands::play::run();
-}          
+    // The command is the second argument
+    let command = &args[1];
 
+    // Execute the appropriate command
+    match command.as_str() {
+        "play" => commands::play::run(),
+        "pause" => commands::pause::run(),
+        "next" => commands::next::run(),
+        "previous" => commands::pre::run(),
+        "status" => commands::status::run(),
+        "search" => commands::search::run(),
+        "help" => commands::help::run(),
+        "tabs" => commands::tabs::run(),
+
+        _ => {
+            println!("Unknown command: {}", command);
+            println!("Type 'fad help' to see available commands.");
+        }
+    }
 }

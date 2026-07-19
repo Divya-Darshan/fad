@@ -1,4 +1,3 @@
-
 pub fn run() {
-    println!("Playing...");
+    println!("Playing music...");
 }
