@@ -1,7 +1,8 @@
-
-
+mod commands;
+use std::env;
 
 fn main() {
+
     println!(
 r#"
 Usage:
@@ -19,7 +20,12 @@ Common Commands:
 
 For more information on a command:
     fad help <command>
-
-bug report: https://github.com/divya-darshan/fad
 "#);
+
+// bug report: https://github.com/divya-darshan/fad
+
+if command == "play"{
+commands::play::run();
+}          
+
 }
