@@ -1,7 +1,7 @@
 // src/commands/tabs.rs
 
 pub fn run() {
-    let url = "http://172.29.48.1:9222/json";
+    let url = "http://localhost:9222/json";
 
     match reqwest::blocking::get(url) {
         Ok(response) => match response.text() {
