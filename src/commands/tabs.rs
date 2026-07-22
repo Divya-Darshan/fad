@@ -37,7 +37,7 @@ pub fn run() {
                         {
                             println!("[{}] {}", i + 1, tab.title);
                             println!("    URL: {}", tab.url);
-                            println!();
+                             println!();
                         }
                     }
                     Err(e) => eprintln!("Failed to parse JSON: {e}"),
