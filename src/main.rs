@@ -1,3 +1,4 @@
+mod browser;
 mod commands;
 
 use std::env;
@@ -8,27 +9,29 @@ fn main() {
 
     // If no command is given, print help
     if args.len() < 2 {
-        println!(
-                r#"
-                Usage:
-                    fad <command> [options]
+            println!(
+            r#"
+            Usage:
+            fad <command> [options]
 
-                Common Commands:
-                    play        Play or resume playback
-                    pause       Pause playback
-                    next        Play the next track
-                    previous    Play the previous track
-                    status      Show current playback status
-                    search      Search YouTube
-                    tabs        List browser tabs
-                    help        Show help information
+            Common Commands:
+            play        Play or resume playback
+            pause       Pause playback
+            next        Play the next track
+            previous    Play the previous track 
+            status      Show current playback status
+            search      Search YouTube
+            tabs        List browser tabs
+            help        Show help information
 
-                For more information on a command:
-                    fad help <command>
-                "#
-        );
+            For more information on a command:
+            fad help <command>
 
-        // bug report: https://github.com/divya-darshan/fad
+            bug report: https://github.com/divya-darshan/fad
+            "#
+            );
+
+ 
         return;
     }
 
