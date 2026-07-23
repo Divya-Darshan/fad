@@ -52,7 +52,7 @@ pub fn run() {
         return;
     }
 
-    println!("paused");
+    println!("playing");
 }
 
 /// Helper function to fetch open tabs and return the YouTube WebSocket URL
