@@ -2,6 +2,7 @@ pub mod play;
 pub mod pause;
 pub mod next;
 pub mod pre;
+pub mod start;
 pub mod status;
 pub mod search;
 pub mod help;

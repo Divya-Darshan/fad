@@ -44,6 +44,7 @@ fn main() {
         "pause" => commands::pause::run(),
         "next" => commands::next::run(),
         "previous" => commands::pre::run(),
+        "start" => commands::start::run(),
         "status" => commands::status::run(),
         "search" => commands::search::run(),
         "help" => commands::help::run(),
