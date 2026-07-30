@@ -26,10 +26,10 @@ fn main() {
 
             For more information on a command:
             fad help <command>
-
-            bug report: https://github.com/divya-darshan/fad
             "#
             );
+
+        // bug report: https://github.com/divya-darshan/fad
 
  
         return;
