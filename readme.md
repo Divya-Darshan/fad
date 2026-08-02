@@ -1,8 +1,8 @@
 todo:
 
-* make the commads work 
+* make the commads work ╰(*°▽°*)╯ (done) 
 
-* makeit so can it communicate to brave
+* makeit so can it communicate to brave ╰(*°▽°*)╯ (done)
 
 * Somehow find the way to identify the tabs What are opened already in brave
 
