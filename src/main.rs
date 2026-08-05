@@ -54,7 +54,7 @@ fn main() {
         "start" => commands::start::run(),
         "status" => commands::status::run(),
         "search" => commands::search::run(),
-        
+        "exit" => commands::exit::run(),
         "help" => commands::help::run(),
         "tabs" => commands::tabs::run(),
 

@@ -6,4 +6,5 @@ pub mod start;
 pub mod status;
 pub mod search;
 pub mod help;
+pub  mod exit;
 pub mod tabs;
