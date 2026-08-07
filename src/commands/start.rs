@@ -16,7 +16,8 @@ fn restart_brave_cdp() -> Result<(), Box<dyn std::error::Error>> {
 
     println!("Stopping all Brave processes...");
 
-    // 1. Aggressively kill all Brave processes
+    // Aggressively kill all Brave processes and in some causes it loops never stops
+    // no idea why?
     loop {
         attempt += 1;
         
@@ -76,7 +77,7 @@ fn restart_brave_cdp() -> Result<(), Box<dyn std::error::Error>> {
                .spawn()
                .expect("Failed to start Brave Browser");
 
-    println!("✓ Brave started in CDP mode with PID: {}", child.id());
+    println!("Brave started in CDP mode with PID: {}", child.id());
     
     Ok(())
 }   
