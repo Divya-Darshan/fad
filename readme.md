@@ -4,9 +4,9 @@ todo:
 
 * makeit so can it communicate to brave ╰(*°▽°*)╯ (done)
 
-* while launches in CDP mode it fails to automatically restore the previous session. Every time the browser is closed and reopened, a prompt annoying pops up in the corner asking: 'Would you like to restore your session?', requiring a manual click each time. 
+
 <details>
-  <summary><b>Session Restore Prompt</b></summary>
+  <summary><b>* while launches in CDP mode it fails to automatically restore the previous session. Every time the browser is closed and reopened, a prompt annoying pops up in the corner asking: 'Would you like to restore your session?', requiring a manual click each time. </b></summary>
   <br>
   <p align="center">
     <img src="./img/bravess.png" alt="Brave session" width="90%">
