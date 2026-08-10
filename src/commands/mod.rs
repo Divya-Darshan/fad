@@ -6,8 +6,11 @@ pub mod start;
 pub mod status;
 pub mod search;
 pub mod help;
-pub  mod exit;
+pub mod exit;
 pub mod tabs;
+
+// install
+pub mod winbrave;
 
 // the command works "winget install fad"
 //Today the PR Got approved 17 hours ago right now the time 11:08 PM Friday 7th of August 
