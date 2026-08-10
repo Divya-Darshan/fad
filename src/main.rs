@@ -5,10 +5,9 @@ use std::env;
 
 // runs brave in the CDP mode
 // and just closeing the main instence is not enough
-// Every single one of the instances even in the task manager have to be closed 
+// Every single one of the instances even in the task manager have to be closed
 // If not it's just gonna open normal That sucks🤬🤬🤬 I have no idea Y
 // "C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe" --remote-debugging-port=9222 --remote-allow-origins=*
-
 
 fn main() {
     // Collect all command line arguments
@@ -16,7 +15,7 @@ fn main() {
 
     // If no command is given, print help
     if args.len() < 2 {
-            println!(
+        println!(
             r#"
             Usage:
             fad <command> [options]
@@ -25,7 +24,7 @@ fn main() {
             play        Play or resume playback
             pause       Pause playback
             next        Play the next track
-            previous    Play the previous track 
+            previous    Play the previous track
             status      Show current playback status
             search      Search YouTube
             tabs        List browser tabs
@@ -34,11 +33,10 @@ fn main() {
             For more information on a command:
             fad help <command>
             "#
-            );
+        );
 
         // bug report: https://github.com/divya-darshan/fad
 
- 
         return;
     }
 
@@ -59,7 +57,7 @@ fn main() {
         "tabs" => commands::tabs::run(),
 
         _ => {
-            println!("Unknown command: {}", command);
+            println!("Unknown command: {} what you yapping bout bruh!", command);
             println!("Type 'fad help' to see available commands.");
         }
     }
