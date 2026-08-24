@@ -1,6 +1,7 @@
 mod browser;
 mod commands;
 
+
 use std::env;
 
 // runs brave in the CDP mode
@@ -45,19 +46,27 @@ fn main() {
 
     // Execute the appropriate command
     match command.as_str() {
-        "play" => commands::play::run(),
+        "play" => commands::play::run(), 
         "pause" => commands::pause::run(),
-        "next" => commands::next::run(),
-        "previous" => commands::pre::run(),
+        "next" => commands::next::run(),//400
+        "previous" => commands::pre::run(),//400
         "start" => commands::start::run(),
-        "status" => commands::status::run(),
-        "search" => commands::search::run(),
+        "status" => commands::status::run(),//400
         "exit" => commands::exit::run(),
         "help" => commands::help::run(),
         "tabs" => commands::tabs::run(),
 
+        "search" => {
+                    if args.len() > 2 {
+                        let query = args[2..].join(" ");//400
+                        commands::search::run(&query);
+                    } else {
+                        println!("");
+                    }
+                }
+
         //install beave
-        "winbrave" => commands::winbrave::run(),
+        "brave" => commands::winbrave::run(),
         _ => {
             println!("Unknown command: {} what you yapping bout bruh!", command);
             println!("Type 'fad help' to see available commands.");
