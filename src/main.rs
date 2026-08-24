@@ -8,7 +8,6 @@ use std::env;
 // Every single one of the instances even in the task manager have to be closed
 // If not it's just gonna open normal That sucks🤬🤬🤬 I have no idea Y
 // "C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe" --remote-debugging-port=9222 --remote-allow-origins=*
-
 fn main() {
     // Collect all command line arguments
     let args: Vec<String> = env::args().collect();
