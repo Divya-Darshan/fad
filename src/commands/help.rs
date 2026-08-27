@@ -7,11 +7,11 @@ pub fn run() {
         Common Commands:
         play        Play or resume playback
         pause       Pause playback
-        next        Play the next track
-        previous    Play the previous track
+        next        Play the next track 400
+        previous    Play the previous track 400
         start       Starts barve with CDP mode
-        status      Show current playback status
-        search      Search YouTube
+        status      Show current playback status 400
+        search      Search YouTube 400
         tabs        List browser tabs
         help        Show help information
 
