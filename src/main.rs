@@ -1,7 +1,6 @@
 mod browser;
 mod commands;
 
-
 use std::env;
 
 // runs brave in the CDP mode
@@ -9,7 +8,8 @@ use std::env;
 // Every single one of the instances even in the task manager have to be closed
 // If not it's just gonna open normal That sucks🤬🤬🤬 I have no idea Y
 // "C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe" --remote-debugging-port=9222 --remote-allow-origins=*
-fn main() {
+#[tokio::main]
+async fn main() {
     // Collect all command line arguments
     let args: Vec<String> = env::args().collect();
 
@@ -48,24 +48,26 @@ fn main() {
     match command.as_str() {
         "play" => commands::play::run(), 
         "pause" => commands::pause::run(),
-        "next" => commands::next::run(),//400
-        "previous" => commands::pre::run(),//400
+        "next" => commands::next::run(),
+        "previous" => commands::pre::run(),
         "start" => commands::start::run(),
-        "status" => commands::status::run(),//400
+        "status" => commands::status::run(),
         "exit" => commands::exit::run(),
         "help" => commands::help::run(),
         "tabs" => commands::tabs::run(),
 
         "search" => {
-                    if args.len() > 2 {
-                        let query = args[2..].join(" ");//400
-                        commands::search::run(&query);
-                    } else {
-                        println!("");
-                    }
+            if args.len() > 2 {
+                let query = args[2..].join(" ");
+                if let Err(e) = commands::search::run(&query).await {
+                    eprintln!("Search error: {}", e);
                 }
+            } else {
+                println!("Please provide a search query! Example: cargo run search hello world");
+            }
+        }
 
-        //install beave
+        // install brave
         "brave" => commands::winbrave::run(),
         _ => {
             println!("Unknown command: {} what you yapping bout bruh!", command);
