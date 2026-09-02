@@ -16,3 +16,6 @@ todo:
 * Somehow find the way to identify the tabs What are opened already in brave (done)
 
 * Find a way to replace Elements and queries Inside of the tages
+
+run:
+  cargo build --release
