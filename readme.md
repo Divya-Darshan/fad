@@ -19,3 +19,4 @@ todo:
 
 run:
   cargo build --release
+  wingetcreate update DivyaDarshan.fad -v 0.2.0 -u "https://github.com/Divya-Darshan/fad/releases/download/v0.2.0/fad.exe" --submit
