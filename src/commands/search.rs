@@ -1,4 +1,4 @@
-use websearch::{web_search, providers::DuckDuckGoProvider, SearchOptions};
+use websearch::{web_search, providers::DuckDuckGoProvider, SearchOptions};//duck    
 
 pub async fn run(query: &str) -> Result<(), Box<dyn std::error::Error>> {
     println!("Searching for: {}", query);
