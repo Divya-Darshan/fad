@@ -51,7 +51,11 @@ async fn main() {
         "next" => commands::next::run(),
         "previous" => commands::pre::run(),
         "start" => commands::start::run(),
-        "status" => commands::status::run(),
+        "status" => {
+            if let Err(e) = commands::status::run().await {
+                eprintln!("Status error: {}", e);
+            }
+        }
         "exit" => commands::exit::run(),
         "help" => commands::help::run(),
         "tabs" => commands::tabs::run(),

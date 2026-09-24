@@ -1,4 +1,3 @@
-//src/browser.rs
 use serde::Deserialize;
 use serde_json::json;
 use std::error::Error;
@@ -16,10 +15,10 @@ pub struct Tab {
     pub websocket_url: Option<String>,
 }
 
-/// Fetches open tabs and returns the YouTube tab's WebSocket URL
-pub fn get_youtube_ws_url() -> Result<String, Box<dyn std::error::Error>> {
-    let response = reqwest::blocking::get("http://localhost:9222/json")?;
-    let tabs: Vec<Tab> = response.json()?;
+/// Fetches open tabs asynchronously and returns the YouTube tab's WebSocket URL
+pub async fn get_youtube_ws_url() -> Result<String, Box<dyn std::error::Error>> {
+    let response = reqwest::get("http://localhost:9222/json").await?;
+    let tabs: Vec<Tab> = response.json().await?;
 
     for tab in tabs {
         if tab.tab_type == "page" && tab.url.contains("youtube.com") {
@@ -32,10 +31,10 @@ pub fn get_youtube_ws_url() -> Result<String, Box<dyn std::error::Error>> {
     Err("No open YouTube tab found with an active WebSocket debugger URL.".into())
 }
 
-/// Opens a new browser tab with the specified target URL
-pub fn open_new_tab(target_url: &str) -> Result<(), Box<dyn Error>> {
-    let response = reqwest::blocking::get("http://localhost:9222/json")?;
-    let tabs: Vec<Tab> = response.json()?;
+/// Opens a new browser tab with the specified target URL asynchronously
+pub async fn open_new_tab(target_url: &str) -> Result<(), Box<dyn Error>> {
+    let response = reqwest::get("http://localhost:9222/json").await?;
+    let tabs: Vec<Tab> = response.json().await?;
 
     // Find any open page tab with an active WebSocket URL
     let ws_url = tabs
